@@ -1,0 +1,291 @@
+<html>
+<head>
+	<title>Carcassonne Tile Tracker</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<style type="text/css">
+		* {
+			font-family: arial, sans-serif;
+		}
+		h4 { text-align: center; margin: 0 auto 20px; }
+		.container {
+			width: 100%;
+			display: block;
+			margin: 0 auto;
+		    max-width: 580px;
+		}
+		.tile {
+		    display: inline-block;
+		    margin: 2px 0px;
+		    border: 1px solid;
+		    padding: 5px;
+		    vertical-align: top;
+		    height: 122px;
+		    width: 100px;
+		    text-align: center;
+		}
+		.tile > img { 
+			margin: 0 auto 3px; 
+			display: block;
+		    width: 90px;
+		    height: 90px;
+		}
+		.tiles-left > * {
+			display: inline;
+			font-size: 20px;
+			vertical-align: middle;
+		}
+		.tiles-left > a {
+			font-size: 24px;
+			display: inline-block;
+		    padding: 0 10px;
+			background: #ffd5d5;
+			cursor: pointer;
+		}
+		.tiles-left .minus {
+			margin-right: 5px;
+			text-align: left;
+		}
+		.tiles-left .plus {
+			margin-left: 5px;
+			text-align: right;
+		}
+		.reset-btn {
+			display: block;
+			width: 300px;
+			text-align: center;
+			padding: 20px;
+			background: red;
+			margin: 30px auto;
+			color: white;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h4>How many tiles are currently left:</h4>
+	<div class="container">
+		<div class="tile">
+			<img src="./img/tile-1.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>4</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-2.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>2</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-3.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>1</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-4.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>3</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-5.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>1</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-6.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>1</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-7.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>2</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-8.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>3</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-9.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>2</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-10.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>3</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-11.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>2</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-12.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>1</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-13.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>2</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-14.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>2</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-15.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>3</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-16.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>5</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-17.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>3</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-18.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>3</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-19.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>3</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-20.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>3</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-21.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>8</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-22.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>9</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-23.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>4</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-24.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>1</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+		<div class="tile">
+			<img src="./img/tile-25.jpg">
+			<div class="tiles-left">
+				<a class="minus">-</a>
+				<span>1</span>
+				<a class="plus">+</a>
+			</div>
+		</div>
+	</div>
+	<a class="reset-btn">RESET COUNTER</a>
+</body>
+<script type="text/javascript">
+	function decrementNumber(text){
+		return parseInt(text, 10) - 1;
+	}
+	function incrementNumber(text){
+		return parseInt(text, 10) + 1;
+	}
+	$(".minus").on("click",function(){
+		var currentCountElement = $(this).parent().find("span");
+		var currentCountVal = currentCountElement.html();
+		currentCountElement.html(decrementNumber(currentCountVal));		
+	});
+	$(".plus").on("click",function(){
+		var currentCountElement = $(this).parent().find("span");
+		var currentCountVal = currentCountElement.html();
+		currentCountElement.html(incrementNumber(currentCountVal));		
+	});
+	$(".reset-btn").on("click",function(){
+		location.reload();
+	});
+</script>
+</html>
